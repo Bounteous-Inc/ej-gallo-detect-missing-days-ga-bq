@@ -1,6 +1,5 @@
 import utils
 
-from datetime import date
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
@@ -23,6 +22,7 @@ def initialize_analytics_reporting(secret_manager_id, secret_manager_name):
 
     return analytics
 
+
 def get_ga_report(view_id, start_date, end_date, metrics_json, dimensions_json):
     """
     Arguments :
@@ -40,16 +40,17 @@ def get_ga_report(view_id, start_date, end_date, metrics_json, dimensions_json):
     return_obj = analytics.reports().batchGet(
       body={
         'reportRequests': [
-        {
-          'viewId': view_id,
-          'dateRanges': [{'startDate': start_date, 'endDate': end_date}],
-          'metrics': metrics_json,
-          'dimensions': dimensions_json
-        }]
+            {
+                'viewId': view_id,
+                'dateRanges': [{'startDate': start_date, 'endDate': end_date}],
+                'metrics': metrics_json,
+                'dimensions': dimensions_json
+                }]
       }
     ).execute()
 
     return return_obj
+
 
 def find_days_with_no_traffic(view_id):
     """
