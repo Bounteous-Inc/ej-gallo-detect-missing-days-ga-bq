@@ -1,0 +1,15 @@
+google-auth
+google-auth-oauthlib
+google-cloud
+google-cloud-bigquery
+google-cloud-secret-manager
+
+apiclient
+datetime
+python-dateutil
+
+#argparse
+#httplib2
+#pandas
+#numpy
+#google_api_python_client==1.12.3
